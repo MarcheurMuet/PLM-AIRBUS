@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Avions {
     public static void main(String[] args) {
@@ -12,11 +12,12 @@ public class Avions {
                 {"Siège","Confort","250"}
         };
         
-        String[][] Plane = {
-                {"[Marshal]","[A320]","[phase 2]","[Type 2]" + Piece[i]},
-                {"[Eleonor]","[A400M]","[phase 3]","[Type 1]"},
-                {"[Icarus]","[A380]","[phase 1]","[Type 3]"}
-        };
+        // faire un arraylist pour la tableau Plane
+        // avec hashmap et list
+        HashMap<String, String> Planes = new HashMap<String, String, String>();
+        Planes.put("[Marshal]","[A320]","[phase 2]","[Type 2]");
+        Planes.put("[Eleonor]","[A400M]","[phase 3]","[Type 1]");
+        Planes.put("[Icarus]","[A380]","[phase 1]","[Type 3]");
         
         String Respond = scan.nextLine();
         if (Respond.contains("non tous")){
@@ -71,18 +72,15 @@ public class Avions {
                     System.out.print("["+Piece[l][j]+"]" + "\n");  
                     }
                     System.out.println("--------------------\n");
-                }
-                
-            } else if (action.equalsIgnoreCase("modifier")){
-            	
+                } 
             } else if (action.equalsIgnoreCase("supprimer une pièce")){
             	
             } else {
             	
             }
-            } else {
+          } else {
             System.out.println("c'est tout bon alors!");
-        }
+          }
         scan.close();
         }
     }
